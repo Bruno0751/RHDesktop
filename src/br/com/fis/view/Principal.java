@@ -16,18 +16,11 @@ import java.util.Scanner;
  * @since 10/12/2019
  */
 public class Principal {
-    
-    private long cpf;
-    
-    public long getCpf() {
-        return cpf;
-    }
-    
+   
     public static void main(String[] args) {
 
         try{
             Scanner leia = new Scanner(System.in);
-            Principal principal = new Principal();
             Teclado objTeclado = new Teclado();
             
             EmpregadoBO objEmpregadoBO = new EmpregadoBO();
@@ -35,8 +28,8 @@ public class Principal {
             GerenteBO objGerenteBO = new GerenteBO();
             
             Departamento objDepartament = new Departamento();
-            Empregado objEmpregado = new Empregado(principal.getCpf(), "");
-            Gerente objGerente = new Gerente(principal.getCpf(), "");
+            Empregado objEmpregado = new Empregado(Tela.getCpf(), "");
+            Gerente objGerente = new Gerente(Tela.getCpf(), "");
             
             do{
                 System.out.print("\n:::::::::::::::::::::MENU:::::::::::::::::::::::\n"

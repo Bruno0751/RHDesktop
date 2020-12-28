@@ -4,6 +4,13 @@ package br.com.fis.view;
 import java.awt.AWTException;
 import java.awt.Robot;
 public class Tela {
+    
+    private static long cpf;
+    
+    public static long getCpf() {
+        return cpf;
+    }
+    
     public static void limparTela() {
         try {
             Robot pressbot = new Robot();
