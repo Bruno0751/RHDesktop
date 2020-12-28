@@ -13,7 +13,6 @@ public class Empregado{
 
     public Empregado(long cpf, String nome) { }
 
-
     public long getCpf() {
         return cpf;
     }

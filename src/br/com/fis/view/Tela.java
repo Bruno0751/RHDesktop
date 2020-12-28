@@ -1,5 +1,6 @@
 //PROJECT NAME: prjRH
 package br.com.fis.view;
+
 import java.awt.AWTException;
 import java.awt.Robot;
 public class Tela {

@@ -1,6 +1,8 @@
 //PROJECT NAME: prjRH
 package br.com.fis.model;
+
 import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author Bruno Gressler da Silveira
@@ -9,13 +11,12 @@ import java.util.ArrayList;
  */
 public class Gerente extends Empregado {
 
-    private ArrayList<Departamento> listaDeDepartamentos;    
+    private List<Departamento> listaDepartamentos;    
     
     public Gerente(long cpf, String nome) {
         super(cpf, nome);
-        this.listaDeDepartamentos = new ArrayList<>();
+        this.listaDepartamentos = new ArrayList<>();
     } 
-    public void Gerente(){}
     
     @Override
     public long getCpf() {
@@ -37,12 +38,12 @@ public class Gerente extends Empregado {
         this.nome = nome;
     }
  
-    public void setListaDeDepartamentos(ArrayList<Departamento> listaDeDepartamento){
-        this.listaDeDepartamentos = listaDeDepartamento;
+    public void setListaDepartamentos(List<Departamento> listaDepartamento){
+        this.listaDepartamentos = listaDepartamento;
     }
 
-    public ArrayList<Departamento> getListaDeDepartamentos() {
-        return listaDeDepartamentos;
+    public List<Departamento> getListaDepartamentos() {
+        return listaDepartamentos;
     }
     
     
@@ -52,5 +53,4 @@ public class Gerente extends Empregado {
                 + "::  Nome: " + this.nome + "\n"
                 + "::  CPF: " + this.cpf;
     }
-
 }

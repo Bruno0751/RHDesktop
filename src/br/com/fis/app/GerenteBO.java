@@ -1,9 +1,9 @@
 //PROJECT NAME: prjRH
 package br.com.fis.app;
-import br.com.fis.model.Departamento;
+
 import br.com.fis.model.Gerente;
-import br.com.fis.view.Principal;
 import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author Bruno Gressler da Silveira
@@ -12,43 +12,43 @@ import java.util.ArrayList;
  */
 public class GerenteBO {
     
-    private ArrayList<Gerente> arrayLGerente;
-    private ArrayList<Gerente> listaDeGerentes;
+    private List<Gerente> listGerentes;
+    private List<Gerente> listingGerentes;
     
     public GerenteBO(){
-        this.arrayLGerente = new ArrayList<>();
-        this.listaDeGerentes = new ArrayList<>();
+        this.listGerentes = new ArrayList<>();
+        this.listingGerentes = new ArrayList<>();
     }
 
-    public ArrayList<Gerente> getListaDeGerentes() {
-        return listaDeGerentes;
+    public List<Gerente> getListingGerentes() {
+        return listingGerentes;
     }
 
-    public void setListaDeGerentes(ArrayList<Gerente> listaDeGerentes) {
-        this.listaDeGerentes = listaDeGerentes;
+    public void setListingGerentes(List<Gerente> listingGerentes) {
+        this.listingGerentes = listingGerentes;
     }
    
     public void gravarGerente(String nome, long cpf){
         Gerente objGerente = new Gerente(cpf, "");
-        ArrayList<Gerente> arrayLGerentes = getListaDeGerentes();
+        List<Gerente> gerentes = getListingGerentes();
         
         objGerente.setNome(nome);
         objGerente.setCpf(cpf);
-        arrayLGerentes.add(objGerente);
-        this.arrayLGerente = arrayLGerentes;
+        gerentes.add(objGerente);
+        this.listGerentes = gerentes;
     }
     
     private String getAllListaDeGerentes() {
         String gerentes = "Lista de Todos os GERENTES \n";
-        for (int i = 0; i < getListaDeGerentes().size() ; i++) {
-            gerentes += "\n::::::::::::::::GERENTE " + (i + 1) + ":::::::::::::::::" + this.arrayLGerente.get(i) + "\n"
+        for (int i = 0; i < getListingGerentes().size() ; i++) {
+            gerentes += "\n::::::::::::::::GERENTE " + (i + 1) + ":::::::::::::::::" + this.listGerentes.get(i) + "\n"
                     + ":::::::::::::::::::::::::::::::::::::::::::::::";
         }
         return gerentes;
     }
     
     public void processos(){
-        if (arrayLGerente.isEmpty()){
+        if (listGerentes.isEmpty()){
             System.out.println("Não Há Gerentes Cadastrados");
         } else {
             System.out.println("Gerentes Cadastrados: \n" + getAllListaDeGerentes());

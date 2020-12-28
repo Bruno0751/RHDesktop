@@ -1,5 +1,6 @@
 //PROJECT NAME: prjRH
 package br.com.fis.utl;
+
 import java.util.Scanner;
 /**
  *
@@ -12,10 +13,11 @@ public class Teclado {
     private String nome;
     private int numero;
     private long cpf;
+    private static byte op;
     
     Scanner leia = new Scanner(System.in);
     
-    public String lerString(){
+    public  String lerString(){
         this.nome = leia.next();
         return this.nome;
     }
@@ -28,5 +30,13 @@ public class Teclado {
     public int lerInt(){
         this.numero = leia.nextInt();
         return this.numero;
+    }
+    
+    public static void setOp(byte op) {
+        Teclado.op = op;
+    }
+
+    public static byte getOp() {
+        return Teclado.op;
     }
 }
